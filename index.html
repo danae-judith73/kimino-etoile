@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>きみのえとわーる</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="app-header">
+    <h1>きみのえとわーる</h1>
+  </header>
+
+  <main>
+    <section id="home" class="page active">
+      <h2>今週の予定</h2>
+      <div id="home-list" class="card-list"></div>
+    </section>
+
+    <section id="add" class="page">
+      <h2 id="form-title">追加する</h2>
+
+      <form id="item-form" class="form">
+        <input id="title" type="text" placeholder="タイトル" required />
+
+        <select id="category">
+          <option value="movie">映画</option>
+          <option value="anime">アニメ</option>
+          <option value="drama">ドラマ</option>
+          <option value="book">小説</option>
+          <option value="museum">美術館</option>
+        </select>
+
+        <label>
+          予定日
+          <input id="plannedDate" type="date" />
+        </label>
+
+        <label>
+          会期・期限
+          <input id="endDate" type="date" />
+        </label>
+
+        <textarea id="memo" placeholder="メモ"></textarea>
+
+        <select id="rating">
+          <option value="">評価なし</option>
+          <option value="5">★★★★★</option>
+          <option value="4">★★★★</option>
+          <option value="3">★★★</option>
+          <option value="2">★★</option>
+          <option value="1">★</option>
+        </select>
+
+        <textarea id="review" placeholder="感想"></textarea>
+
+        <button type="submit" id="submit-button">追加する</button>
+        <button type="button" id="cancel-edit" class="sub-button">編集をやめる</button>
+      </form>
+    </section>
+
+    <section id="schedule" class="page">
+      <h2>予定一覧</h2>
+
+      <div class="filter-tabs">
+        <button class="filter active" data-category="all">全部</button>
+        <button class="filter" data-category="movie">映画</button>
+        <button class="filter" data-category="anime">アニメ</button>
+        <button class="filter" data-category="drama">ドラマ</button>
+        <button class="filter" data-category="book">小説</button>
+        <button class="filter" data-category="museum">美術館</button>
+      </div>
+
+      <div id="schedule-list" class="card-list"></div>
+    </section>
+
+    <section id="calendar" class="page">
+      <h2>カレンダー</h2>
+
+      <div class="calendar-header">
+        <button id="prev-month">‹</button>
+        <h3 id="calendar-title"></h3>
+        <button id="next-month">›</button>
+      </div>
+
+      <div class="calendar-weekdays">
+        <span>日</span><span>月</span><span>火</span><span>水</span><span>木</span><span>金</span><span>土</span>
+      </div>
+
+      <div id="calendar-grid" class="calendar-grid"></div>
+    </section>
+
+    <section id="log" class="page">
+      <h2>完了ログ</h2>
+      <div id="log-list" class="card-list"></div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <button data-page="home">ホーム</button>
+    <button data-page="add">追加</button>
+    <button data-page="schedule">予定</button>
+    <button data-page="calendar">カレンダー</button>
+    <button data-page="log">ログ</button>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>
